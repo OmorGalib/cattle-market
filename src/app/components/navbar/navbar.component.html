@@ -1,0 +1,11 @@
+<nav class="navbar">
+    <div class="navbar-brand">Eid-ul-Adha Cattle Market</div>
+    <div class="navbar-menu">
+        <a class="navbar-item" routerLink="/cattle" *ngIf="authService.isLoggedIn">Home</a>
+        <a class="navbar-item" routerLink="/add" *ngIf="authService.isLoggedIn">Add Cattle</a>
+        <div class="navbar-item" *ngIf="authService.isLoggedIn">
+            <button class="button is-light" (click)="logout()">Logout</button>
+        </div>
+        <a class="navbar-item" routerLink="/login" *ngIf="!authService.isLoggedIn">Login</a>
+    </div>
+</nav>
