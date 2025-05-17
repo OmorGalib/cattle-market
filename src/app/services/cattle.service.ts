@@ -1,25 +1,28 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Cattle } from '../models/cattle.model';
+import { CattleModel } from '../models/cattle.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CattleService {
   private apiUrl = 'http://localhost:3001/cattle';
 
   constructor(private http: HttpClient) {}
 
-  getCattleList(): Observable<Cattle[]> {
-    return this.http.get<Cattle[]>(this.apiUrl);
+  getCattleList(): Observable<CattleModel[]> {
+    return this.http.get<CattleModel[]>(this.apiUrl);
   }
 
-  addCattle(cattle: Omit<Cattle, 'id'>): Observable<Cattle> {
-    return this.http.post<Cattle>(this.apiUrl, cattle);
+  addCattle(cattle: Omit<CattleModel, 'id'>): Observable<CattleModel> {
+    return this.http.post<CattleModel>(this.apiUrl, cattle);
   }
 
-  updateCattleStatus(id: number, status: 'available' | 'sold'): Observable<Cattle> {
-    return this.http.patch<Cattle>(`${this.apiUrl}/${id}`, { status });
+  updateCattleStatus(
+    id: number,
+    status: 'available' | 'sold'
+  ): Observable<CattleModel> {
+    return this.http.patch<CattleModel>(`${this.apiUrl}/${id}`, { status });
   }
 }

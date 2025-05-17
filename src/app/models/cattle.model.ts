@@ -1,4 +1,4 @@
-export interface Cattle {
+export interface CattleModel {
   id: number;
   breed: string;
   weight: number;

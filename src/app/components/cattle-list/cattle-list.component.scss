@@ -1,0 +1,116 @@
+h1 {
+  font-family: "poppins", sans-serif;
+  font-size: 48px;
+  color: #80290e;
+  font-weight: 900;
+  text-align: center;
+}
+p {
+  font-family: "roboto", sans-serif;
+  font-size: 16px;
+  color: #0a6a96;
+  font-weight: 400;
+  text-align: center;
+  line-height: 22px;
+}
+.cattle-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  .cattle-list-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #c0441f;
+    margin-right: 10px;
+  }
+  .btn-add {
+    background-color: #0e8b18;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #0c6a14;
+    }
+  }
+}
+
+.cattle-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.c-card {
+  box-shadow: 0 1px 4px 0 #19213d14;
+  border-radius: 8px;
+  border: 1px solid #e1e4ed;
+  background-color: #ffffff;
+
+  .card-img {
+    height: 200px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-top-right-radius: 8px;
+      border-top-left-radius: 8px;
+    }
+  }
+}
+
+.cattle-details {
+  padding: 10px;
+  h3 {
+    font-weight: 800;
+    line-height: 28px;
+    font-size: 20px;
+    color: #5768a1;
+    margin: 0;
+    text-align: start;
+  }
+  p {
+    font-weight: 400;
+    line-height: 22px;
+    font-size: 14px;
+    color: #3b9230;
+    text-align: start;
+    margin: 0;
+    span {
+      font-weight: 600;
+      color: #111111;
+    }
+  }
+}
+
+.status-btn {
+  width: 100%;
+  padding: 5px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 8px;
+
+  &.available {
+    background-color: #4caf50;
+    color: white;
+  }
+
+  &.sold {
+    background-color: #f44336;
+    color: white;
+  }
+}
+
+.error-message {
+  color: #f44336;
+  margin: 10px 0;
+}

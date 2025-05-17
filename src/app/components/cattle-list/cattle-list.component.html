@@ -1,3 +1,37 @@
 <app-navbar></app-navbar>
+<div class="container">
+    <h1>Welcome To The Cattle House</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae iure eum, <br> facilis quidem nostrum sequi
+        porro
+        deleniti. Voluptatibus, at harum?</p>
+    <div class="cattle-list-header">
+        <h2 class="cattle-list-title">Cattle List<svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                viewBox="0 -960 960 960" width="24px" fill="#6D758F">
+                <path
+                    d="M480-200 240-440l56-56 184 183 184-183 56 56-240 240Zm0-240L240-680l56-56 184 183 184-183 56 56-240 240Z" />
+            </svg></h2>
+        <button class="btn-add" routerLink="/add" *ngIf="authService.isLoggedIn">Add Cattle</button>
+    </div>
 
-<p>cattle-list works!</p>
+    <div *ngIf="isLoading">Loading cattle list...</div>
+    <div *ngIf="error" class="error-message">{{ error }}</div>
+
+    <div class="cattle-list" *ngIf="!isLoading && !error">
+        <div class="c-card" *ngFor="let cattle of cattleList">
+            <div class="card-img">
+                <img src="images/login-bg.jpg" alt="No Image Found!">
+            </div>
+            <div class="cattle-details">
+                <h3>{{ cattle.breed }}</h3>
+                <p><span>ID:</span> {{ cattle.id }}</p>
+                <p><span>Weight:</span> {{ cattle.weight }} <span>kg</span></p>
+                <p><span>Price:</span> {{ cattle.price | currency:'BDT-' }} <span>TK</span></p>
+                <p><span>Status:</span> {{ cattle.status | status }}</p>
+                <button class="status-btn" [class.available]="cattle.status === 'available'"
+                    [class.sold]="cattle.status === 'sold'" (click)="toggleStatus(cattle)">
+                    Mark as {{ cattle.status === 'available' ? 'Sold' : 'Available' }}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
