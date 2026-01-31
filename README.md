@@ -24,19 +24,16 @@ A cattle market management application built with Angular 19 that allows users t
    ```bash
    git clone https://github.com/your-username/cattle-market.git
    cd cattle-market
-2.Install dependencies:
-   ```bash
-   npm install
-3.Install JSON Server globally (for mock API):
-   ```bash
-   npm install -g json-server
+
+2.Install dependencies: npm install
+
+3.Install JSON Server globally (for mock API): npm install -g json-server
 
 ### Development Server
 
-1.Start the Angular development server:
-   ng serve
-2.In a separate terminal, start the mock API server:
-   json-server --watch db.json --port 3001
+1.Start the Angular development server: npm run start
+
+2.In a separate terminal, start the mock API server: json-server --watch db.json --port 3001
 
 ### Key Improvements Made:
 1. Added proper project description and technologies section
