@@ -25,8 +25,10 @@ A cattle market management application built with Angular 19 that allows users t
    git clone https://github.com/your-username/cattle-market.git
    cd cattle-market
 2.Install dependencies:
+   ```bash
    npm install
 3.Install JSON Server globally (for mock API):
+   ```bash
    npm install -g json-server
 
 ### Development Server
